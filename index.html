@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+    <div style="border: 1px solid black; width: 300px; text-align: center;">
+        <h3>인사하기</h3>
+        <input type="text" id="newname" placeholder="이름을 입력하세요">
+        <button onclick="인사()">인사하기</button>
+        <p><span style="font-weight: bold; color: blue;" id='result'>홍길동</span>선생님 안녕하세요?</p>
+    </div>
+    <br>
+    <div style="border: 1px solid black; width: 300px; text-align: center;">
+        <h3>구구단을 외자!</h3>
+        <input type="number" id="몇단" placeholder="몇단?" style="width: 50px;">
+        <button onclick="구구단()">계산하기</button>
+        <p id='출력'></p>
+    </div>
+
+    <script>
+        function 인사(){
+            let 선생님이름 = document.getElementById('newname').value;
+            document.getElementById('result').innerHTML= 선생님이름 ;
+        }
+        function 구구단(){
+            let 곱셈수 = document.getElementById('몇단').value;
+            let 결과 = []
+            if(곱셈수<=0){
+                alert('올바른 수를 입력해 주세요')
+            }
+            else{
+                for(i=1; i<10; i++){
+                결과.push(곱셈수*i)
+            }
+            document.getElementById('출력').innerHTML= 결과;
+            }
+            
+        }
+    </script>
+</body>
+</html>
+
